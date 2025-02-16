@@ -1,0 +1,10 @@
+services:
+
+  app:
+    image: arisesinmight/docker-project-74
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    volumes:
+      - "./app:/root"
+    command: make test
