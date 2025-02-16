@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CI: true
+  APP_IMAGE_NAME: ${{ vars.DOCKER_USERNAME }}/docker-project-74
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v3
+
+      - name: Test
+        run: make test
+
+
+      
