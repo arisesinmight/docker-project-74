@@ -1,5 +1,5 @@
 ci:
-	docker compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+	docker compose -f docker-compose.yml up --abort-on-container-exit
 up:
 	docker compose up --remove-orphans
 build:
