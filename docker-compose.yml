@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    env_file:
-      - .env
+    volumes:
+      - ".env.example:/app/.env"
     command: make test
     depends_on: 
       - db
