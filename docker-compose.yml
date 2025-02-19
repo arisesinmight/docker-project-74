@@ -9,10 +9,10 @@ services:
       - ".env.example:/app/.env"
     command: make test
     depends_on: 
-      - db
+      db:
+        condition: service_healthy
   db:
     image: postgres
-    shm_size: 128mb
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: postgres
